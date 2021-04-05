@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Добавить кота</title>
+</head>
+
+<html>
+
+<body>
+<!--форма должна послать post запрос на адрес /cats-->
+<!--th:object="${/addcat} - прокидываем реальный Java-объект -->
+<form th:action="@{/addcat}" th:object="${cat}" method="post">
+    <span>id</span>
+<!--    значение input привяжем к id кота-->
+    <input th:field="*{id}" type="hidden">
+    </p>
+    <span>name</span>
+<!--    значение input привяжем к полю name кота-->
+    <input th:field="*{name}">
+    </p>
+    <span>color</span>
+    <input th:field="*{color}">
+    </p>
+    <button type="submit">Сохранить</button>
+</form>
+
+</body>
+</html>

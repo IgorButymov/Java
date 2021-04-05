@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--форма, кот. при нажатии на кнопку submit должна послать-->
+<!--post запрос на .../form-->
+<!--@ - путь прописан от context-path-->
+<!--name и email полетят вместе с запросом-->
+<form th:action="@{/form}" method="post">
+    <span>Name</span>
+    <input name="name"/>
+    </p>
+    <span>Email</span>
+    <input name="email"/>
+    <button type="submit">Save</button>
+</form>
+
+</body>
+</html>
