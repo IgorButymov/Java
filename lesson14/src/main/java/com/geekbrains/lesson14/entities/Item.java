@@ -5,14 +5,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "products")
-public class Product {
+@Table(name = "items")
+public class Item {
     @Id
     @GeneratedValue
     @Column(name = "id")
@@ -21,8 +20,11 @@ public class Product {
     @Column(name = "title")
     private String title;
 
-    @Column(name = "price")
-    private BigDecimal price;
+    @Column(name = "cost")
+    private int cost;
 
-
+    @Override
+    public String toString() {
+        return String.format("Item [id = %d title = %s cost = %d]", id, title, cost);
+    }
 }
